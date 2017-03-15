@@ -2,10 +2,14 @@
 
 This package state is:
 
+This is not an actively maintained package, but more to keep it stable with some custom addition.
+
+The lastest version was at:
+
 https://github.com/Crinsane/LaravelShoppingcart
 Latest commit 195cc09  on Jan 25
 
-+ extra changes to allow zero cart quantity.
++ extra custom changes to allow zero cart quantity:
 
 https://github.com/Crinsane/LaravelShoppingcart/pull/299
 
