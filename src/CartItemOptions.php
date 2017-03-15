@@ -1,6 +1,6 @@
 <?php
 
-namespace Gloudemans\Shoppingcart;
+namespace Slakbal\Cart;
 
 use Illuminate\Support\Collection;
 

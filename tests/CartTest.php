@@ -1,8 +1,8 @@
 <?php
 
-use Gloudemans\Shoppingcart\Cart;
-use Gloudemans\Shoppingcart\Contracts\Buyable;
-use Gloudemans\Shoppingcart\Contracts\Taxable;
+use Slakbal\Cart\Cart;
+use Slakbal\Cart\Contracts\Buyable;
+use Slakbal\Cart\Contracts\Taxable;
 
 class CartTest extends Orchestra\Testbench\TestCase
 {
@@ -16,7 +16,7 @@ class CartTest extends Orchestra\Testbench\TestCase
      */
     protected function getPackageProviders($app)
     {
-        return [\Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class];
+        return [\Slakbal\Cart\ShoppingcartServiceProvider::class];
     }
 
     /**
@@ -89,7 +89,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $cartItem = $cart->add($item);
 
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem);
+        $this->assertInstanceOf(\Slakbal\Cart\CartItem::class, $cartItem);
         $this->assertEquals('027c91341fd5cf4d2579b49c4b6a90da', $cartItem->rowId);
     }
 
@@ -122,7 +122,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $this->assertTrue(is_array($cartItems));
         $this->assertCount(2, $cartItems);
-        $this->assertContainsOnlyInstancesOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItems);
+        $this->assertContainsOnlyInstancesOf(\Slakbal\Cart\CartItem::class, $cartItems);
     }
 
     /** @test */
@@ -179,7 +179,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $cartItem = $cart->get('07d5da5550494c62daf9993cf954303f');
 
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem);
+        $this->assertInstanceOf(\Slakbal\Cart\CartItem::class, $cartItem);
         $this->assertEquals('XL', $cartItem->options->size);
         $this->assertEquals('red', $cartItem->options->color);
     }
@@ -316,7 +316,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
     /**
      * @test
-     * @expectedException \Gloudemans\Shoppingcart\Exceptions\InvalidRowIDException
+     * @expectedException \Slakbal\Cart\Exceptions\InvalidRowIDException
      */
     public function it_will_throw_an_exception_if_a_rowid_was_not_found()
     {
@@ -426,7 +426,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $cartItem = $cart->get('027c91341fd5cf4d2579b49c4b6a90da');
 
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem);
+        $this->assertInstanceOf(\Slakbal\Cart\CartItem::class, $cartItem);
     }
 
     /** @test */
@@ -480,7 +480,7 @@ class CartTest extends Orchestra\Testbench\TestCase
                 'price' => 10.00,
                 'tax' => 2.10,
                 'subtotal' => 10.0,
-                'options' => new \Gloudemans\Shoppingcart\CartItemOptions,
+                'options' => new \Slakbal\Cart\CartItemOptions,
             ],
             '370d08585360f5c568b18d1f2e4ca1df' => [
                 'rowId' => '370d08585360f5c568b18d1f2e4ca1df',
@@ -490,7 +490,7 @@ class CartTest extends Orchestra\Testbench\TestCase
                 'price' => 10.00,
                 'tax' => 2.10,
                 'subtotal' => 10.0,
-                'options' => new \Gloudemans\Shoppingcart\CartItemOptions,
+                'options' => new \Slakbal\Cart\CartItemOptions,
             ]
         ], $content->toArray());
     }
@@ -558,7 +558,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $this->assertInstanceOf(\Illuminate\Support\Collection::class, $cartItem);
         $this->assertCount(1, $cartItem);
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem->first());
+        $this->assertInstanceOf(\Slakbal\Cart\CartItem::class, $cartItem->first());
         $this->assertEquals(1, $cartItem->first()->id);
     }
 
@@ -599,7 +599,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $this->assertInstanceOf(\Illuminate\Support\Collection::class, $cartItem);
         $this->assertCount(1, $cartItem);
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem->first());
+        $this->assertInstanceOf(\Slakbal\Cart\CartItem::class, $cartItem->first());
         $this->assertEquals(1, $cartItem->first()->id);
     }
 
@@ -635,7 +635,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
     /**
      * @test
-     * @expectedException \Gloudemans\Shoppingcart\Exceptions\UnknownModelException
+     * @expectedException \Slakbal\Cart\Exceptions\UnknownModelException
      * @expectedExceptionMessage The supplied model SomeModel does not exist.
      */
     public function it_will_throw_an_exception_when_a_non_existing_model_is_being_associated()
@@ -859,7 +859,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
     /**
      * @test
-     * @expectedException \Gloudemans\Shoppingcart\Exceptions\CartAlreadyStoredException
+     * @expectedException \Slakbal\Cart\Exceptions\CartAlreadyStoredException
      * @expectedExceptionMessage A cart with identifier 123 was already stored.
      */
     public function it_will_throw_an_exception_when_a_cart_was_already_stored_using_the_specified_identifier()
@@ -970,7 +970,7 @@ class CartTest extends Orchestra\Testbench\TestCase
     /**
      * Get an instance of the cart.
      *
-     * @return \Gloudemans\Shoppingcart\Cart
+     * @return \Slakbal\Cart\Cart
      */
     private function getCart()
     {

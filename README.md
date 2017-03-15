@@ -1,9 +1,13 @@
 ## LaravelShoppingcart
-[![Build Status](https://travis-ci.org/Crinsane/LaravelShoppingcart.png?branch=master)](https://travis-ci.org/Crinsane/LaravelShoppingcart)
-[![Total Downloads](https://poser.pugx.org/gloudemans/shoppingcart/downloads.png)](https://packagist.org/packages/gloudemans/shoppingcart)
-[![Latest Stable Version](https://poser.pugx.org/gloudemans/shoppingcart/v/stable)](https://packagist.org/packages/gloudemans/shoppingcart)
-[![Latest Unstable Version](https://poser.pugx.org/gloudemans/shoppingcart/v/unstable)](https://packagist.org/packages/gloudemans/shoppingcart)
-[![License](https://poser.pugx.org/gloudemans/shoppingcart/license)](https://packagist.org/packages/gloudemans/shoppingcart)
+
+This package state is:
+
+https://github.com/Crinsane/LaravelShoppingcart
+Latest commit 195cc09  on Jan 25
+
++ extra changes to allow zero cart quantity.
+
+https://github.com/Crinsane/LaravelShoppingcart/pull/299
 
 A simple shoppingcart implementation for Laravel.
 
@@ -13,17 +17,17 @@ Install the package through [Composer](http://getcomposer.org/).
 
 Run the Composer require command from the Terminal:
 
-    composer require gloudemans/shoppingcart
+    composer require slakbal\cart
 
 Now all you have to do is add the service provider of the package and alias the package. To do this open your `config/app.php` file.
 
 Add a new line to the `providers` array:
 
-	Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+	Slakbal\Cart\ShoppingcartServiceProvider::class
 
 And optionally add a new line to the `aliases` array:
 
-	'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+	'Cart' => Slakbal\Cart\Facades\Cart::class,
 
 Now you're ready to start using the shoppingcart in your application.
 
