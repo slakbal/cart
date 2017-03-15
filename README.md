@@ -80,9 +80,9 @@ This way you can just pass the `add()` method a model and the quantity and it wi
 ```php
 Cart::add($product, 1, ['size' => 'large']);
 ```
-As an optional third parameter you can add options.
+As an optional third parameter you can add options. And the quantity can also be 0.
 ```php
-Cart::add($product, 1, ['size' => 'large']);
+Cart::add($product, 0, ['size' => 'large']);
 ```
 
 Finally, you can also add multipe items to the cart at once.
@@ -110,7 +110,7 @@ If you simply want to update the quantity, you'll pass the update method the row
 ```php
 $rowId = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
 
-Cart::update($rowId, 2); // Will update the quantity
+Cart::update($rowId, 0); // Will update the quantity to 0
 ```
 
 If you want to update more attributes of the item, you can either pass the update method an array or a `Buyable` as the second parameter. This way you can update all information of the item with the given rowId.
