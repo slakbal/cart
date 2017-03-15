@@ -4,10 +4,11 @@ This package state is:
 
 This is not an actively maintained package, but more to keep it stable with some custom addition.
 
-The lastest version was at:
+The lastest version was at: 2.3.0
 
 https://github.com/Crinsane/LaravelShoppingcart
 Latest commit 195cc09  on Jan 25
+Release: 2.3.0
 
 + extra custom changes to allow zero cart quantity:
 
