@@ -1,6 +1,6 @@
 {
     "name": "slakbal/cart",
-    "description": "Shoppingcart",
+    "description": "Shoppingcart for Laravel that allows zero (0) quantity for an item in the cart",
     "keywords": ["laravel", "shoppingcart"],
     "license": "MIT",
     "authors": [
@@ -10,18 +10,20 @@
         }
     ],
     "require": {
-        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
-        "illuminate/session": "5.1.*|5.2.*|5.3.*|5.4.*",
-        "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*"
+        "illuminate/support": "~5"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0",
-        "mockery/mockery": "~0.9.0",
-        "orchestra/testbench": "~3.0"
+        "orchestra/testbench": "*",
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "psr-4": {
             "Slakbal\\Cart\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Slakbal\\Cart\\Test\\": "tests"
         }
     },
     "suggest": {
