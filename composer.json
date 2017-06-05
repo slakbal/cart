@@ -26,8 +26,5 @@
             "Slakbal\\Cart\\Test\\": "tests"
         }
     },
-    "suggest": {
-        "gloudemans/notify": "Simple flash notifications for Laravel"
-    },
     "minimum-stability": "stable"
 }
