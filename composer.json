@@ -26,5 +26,15 @@
             "Slakbal\\Cart\\Test\\": "tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Slakbal\\Cart\\ShoppingcartServiceProvider"
+            ],
+            "aliases": {
+                "Flash": "Slakbal\\Cart\\Facades\\Cart"
+            }
+        }
+    },
     "minimum-stability": "stable"
 }
