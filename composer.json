@@ -1,6 +1,6 @@
 {
     "name": "slakbal/cart",
-    "description": "Shoppingcart for Laravel that allows zero (0) quantity for an item in the cart",
+    "description": "Shoppingcart fork for Laravel that allows zero (0) quantity for an item in the cart",
     "keywords": ["laravel", "shoppingcart"],
     "license": "MIT",
     "authors": [
@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5"
+        "laravel/framework": "5.5.*"
     },
     "require-dev": {
         "orchestra/testbench": "*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "psr-4": {
