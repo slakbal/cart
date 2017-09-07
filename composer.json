@@ -32,7 +32,7 @@
                 "Slakbal\\Cart\\ShoppingcartServiceProvider"
             ],
             "aliases": {
-                "Flash": "Slakbal\\Cart\\Facades\\Cart"
+                "Cart": "Slakbal\\Cart\\Facades\\Cart"
             }
         }
     },
